@@ -11,7 +11,10 @@ import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Call
 import androidx.compose.material.icons.filled.Send
 import androidx.compose.material.icons.filled.ArrowBack
+import androidx.compose.ui.tooling.preview.Preview
 import androidx.navigation.NavController
+import androidx.navigation.compose.rememberNavController
+import com.appsnica.jetpack_compose_jose_juan.ui.theme.Jetpack_compose_Jose_JuanTheme
 
 
 data class Contacto(val nombre: String, val numero: String, val email: String)
@@ -63,5 +66,13 @@ fun ContactListScreen(navController: NavController) {
                 }
             }
         }
+    }
+}
+@Preview(showBackground = true, showSystemUi = true)
+@Composable
+fun ContactListScreenPreview() {
+    val navController = rememberNavController()
+    Jetpack_compose_Jose_JuanTheme {
+        ContactListScreen(navController = navController)
     }
 }

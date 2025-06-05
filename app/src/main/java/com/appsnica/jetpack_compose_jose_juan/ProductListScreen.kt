@@ -12,6 +12,9 @@ import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.ArrowBack
+import androidx.compose.ui.tooling.preview.Preview
+import androidx.navigation.compose.rememberNavController
+import com.appsnica.jetpack_compose_jose_juan.ui.theme.Jetpack_compose_Jose_JuanTheme
 
 data class Producto(
     val sku: Int,
@@ -72,3 +75,11 @@ fun ProductListScreen(navController: NavController) {
     }
 }
 
+@Preview(showBackground = true, showSystemUi = true)
+@Composable
+fun ProductListScreenPreview() {
+    val navController = rememberNavController()
+    Jetpack_compose_Jose_JuanTheme {
+        ProductListScreen(navController = navController)
+    }
+}
